@@ -1,0 +1,16 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore backup files
+*.bak
+*.tmp
+
+# Ignore editor files
+.vscode/
+.idea/
+
+# Ignore large media files (optional)
+# audio/*.mp3
+# images/*.jpg
+# images/*.png

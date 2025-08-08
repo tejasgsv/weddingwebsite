@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chimay & Priyanka - Wedding Invitation</title>
+    <meta name="description" content="Join us in celebrating the wedding of Chimay Pandya and Priyanka Patel on December 2nd, 2025">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@300;400;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cinematic Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="curtain-left"></div>
+        <div class="curtain-right"></div>
+        <div class="loading-content">
+            <div class="cinematic-logo">
+                <div class="golden-ink-animation">
+                    <svg width="300" height="100" viewBox="0 0 300 100">
+                        <path id="namePathC" d="M50 20 Q30 20 30 50 Q30 80 50 80" stroke="#D4AF37" stroke-width="3" fill="none" stroke-dasharray="200" stroke-dashoffset="200"/>
+                        <path id="namePathP" d="M200 20 L200 80 M200 20 Q230 20 230 35 Q230 50 200 50" stroke="#D4AF37" stroke-width="3" fill="none" stroke-dasharray="200" stroke-dashoffset="200"/>
+                        <text x="150" y="60" font-family="Dancing Script" font-size="24" fill="#D4AF37" opacity="0" id="ampersand">&</text>
+                    </svg>
+                </div>
+                <p id="personalGreeting">December 2nd, 2025</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Reactions -->
+    <div id="reactionContainer" class="reaction-container"></div>
+
+    <!-- Digital Guestbook Hearts -->
+    <div id="guestbookHearts" class="guestbook-hearts"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">C & P</div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#story" class="nav-link">Our Story</a>
+                <a href="#events" class="nav-link">Events</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#rsvp" class="nav-link">RSVP</a>
+            </div>
+            <div class="nav-controls">
+                <div class="reaction-buttons">
+                    <button class="reaction-btn" data-emoji="❤️"><i class="fas fa-heart"></i></button>
+                    <button class="reaction-btn" data-emoji="🌸"><i class="fas fa-flower"></i></button>
+                    <button class="reaction-btn" data-emoji="🥁"><i class="fas fa-drum"></i></button>
+                </div>
+                <button id="languageToggle" class="lang-btn">ગુજરાતી</button>
+                <button id="musicToggle" class="music-btn"><i class="fas fa-music"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="floating-elements">
+            <div class="floating-heart">💕</div>
+            <div class="floating-flower">🌸</div>
+            <div class="floating-ring">💍</div>
+        </div>
+        <div class="hero-content">
+            <div class="invitation-card">
+                <div class="ornamental-border">
+                    <div class="corner-decoration top-left"></div>
+                    <div class="corner-decoration top-right"></div>
+                    <div class="corner-decoration bottom-left"></div>
+                    <div class="corner-decoration bottom-right"></div>
+                </div>
+                <div class="invitation-header">
+                    <div class="decorative-line"></div>
+                    <p class="invitation-text fade-in">Together with our families</p>
+                    <div class="decorative-line"></div>
+                </div>
+                <h1 class="couple-names fade-in-delay">
+                    <span class="groom-name">Chimay</span>
+                    <div class="heart-divider">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <span class="bride-name">Priyanka</span>
+                </h1>
+                <div class="invitation-details">
+                    <p class="invitation-subtitle fade-in-delay-2">Request the pleasure of your company</p>
+                    <p class="wedding-date fade-in-delay-3">December 2nd, 2025</p>
+                    <div class="decorative-flourish">
+                        <i class="fas fa-leaf"></i>
+                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-text">Scroll to explore</div>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="countdown-section">
+        <div class="container">
+            <h2 class="section-title" data-en="Days Until Our Wedding" data-gu="અમારા લગ્ન સુધીના દિવસો">Days Until Our Wedding</h2>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">0</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">0</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">0</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">0</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Love Story Timeline Section -->
+    <section id="story" class="story-section">
+        <div class="story-background">
+            <div class="story-pattern"></div>
+            <div class="mandala-animation"></div>
+        </div>
+        <div class="container">
+            <div class="section-header">
+                <div class="decorative-element">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+                <h2 class="section-title" data-en="Our Love Story" data-gu="અમારી પ્રેમ કહાણી">Our Love Story</h2>
+                <div class="decorative-element">
+                    <i class="fas fa-quote-right"></i>
+                </div>
+            </div>
+            
+            <!-- Animated Timeline -->
+            <div class="timeline-container">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-icon">💬</div>
+                    <div class="timeline-content">
+                        <h3>First Chat</h3>
+                        <p class="timeline-date">November 3rd, 2023</p>
+                        <p>A simple "Hi" that changed everything. Sometimes the most beautiful stories begin with the smallest moments.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-icon">☕</div>
+                    <div class="timeline-content">
+                        <h3>First Meeting</h3>
+                        <p class="timeline-date">December 2023</p>
+                        <p>Coffee turned into hours of conversation. We knew we had found something special.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-icon">💍</div>
+                    <div class="timeline-content">
+                        <h3>The Proposal</h3>
+                        <p class="timeline-date">August 2024</p>
+                        <p>Under the stars, with hearts full of love, we decided to spend forever together.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-icon">👰♀️</div>
+                    <div class="timeline-content">
+                        <h3>Our Wedding</h3>
+                        <p class="timeline-date">December 2nd, 2025</p>
+                        <p>The beginning of our forever. Join us as we celebrate our love story.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Virtual Aarti Section -->
+    <section class="aarti-section">
+        <div class="container">
+            <h2 class="section-title">Light a Diya for Our Blessings</h2>
+            <p class="aarti-subtitle">Click the diyas to light them and send your blessings</p>
+            <div class="diya-container">
+                <div class="diya-item" data-lit="false">
+                    <div class="diya-flame">🕯️</div>
+                    <div class="diya-base">🪔</div>
+                </div>
+                <div class="diya-item" data-lit="false">
+                    <div class="diya-flame">🕯️</div>
+                    <div class="diya-base">🪔</div>
+                </div>
+                <div class="diya-item" data-lit="false">
+                    <div class="diya-flame">🕯️</div>
+                    <div class="diya-base">🪔</div>
+                </div>
+                <div class="diya-item" data-lit="false">
+                    <div class="diya-flame">🕯️</div>
+                    <div class="diya-base">🪔</div>
+                </div>
+                <div class="diya-item" data-lit="false">
+                    <div class="diya-flame">🕯️</div>
+                    <div class="diya-base">🪔</div>
+                </div>
+            </div>
+            <div class="blessing-counter">
+                <span id="litDiyas">0</span> diyas lit • <span id="totalBlessings">0</span> blessings received
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Polls Section -->
+    <section class="polls-section">
+        <div class="container">
+            <h2 class="section-title">Help Us Decide</h2>
+            <div class="poll-container">
+                <div class="poll-question">
+                    <h3>What should be our first dance song?</h3>
+                    <div class="poll-options">
+                        <button class="poll-option" data-poll="dance" data-option="romantic">Romantic Bollywood</button>
+                        <button class="poll-option" data-poll="dance" data-option="classical">Classical Indian</button>
+                        <button class="poll-option" data-poll="dance" data-option="fusion">Fusion Mix</button>
+                    </div>
+                    <div class="poll-results" id="danceResults"></div>
+                </div>
+                
+                <div class="poll-question">
+                    <h3>Which garba track should we play?</h3>
+                    <div class="poll-options">
+                        <button class="poll-option" data-poll="garba" data-option="traditional">Traditional Garba</button>
+                        <button class="poll-option" data-poll="garba" data-option="modern">Modern Garba</button>
+                        <button class="poll-option" data-poll="garba" data-option="mix">Mix of Both</button>
+                    </div>
+                    <div class="poll-results" id="garbaResults"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events-section">
+        <div class="container">
+            <h2 class="section-title" data-en="Wedding Events" data-gu="લગ્ન સમારોહ">Wedding Events</h2>
+            
+            <!-- Reception -->
+            <div class="event-card">
+                <div class="event-icon">
+                    <i class="fas fa-glass-cheers"></i>
+                </div>
+                <div class="event-details">
+                    <h3 class="event-title">Reception</h3>
+                    <div class="event-info">
+                        <p><i class="fas fa-calendar"></i> 2nd December 2025</p>
+                        <p><i class="fas fa-clock"></i> 6:00 PM onwards</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Novotel Ahmedabad, Iscon Cross Road, S.G. Highway, Ahmedabad, Gujarat – 380015</p>
+                        <p><i class="fas fa-phone"></i> +91 722-407-2381</p>
+                        <a href="https://maps.google.com/?q=Novotel+Ahmedabad+Iscon+Cross+Road" target="_blank" class="map-link">
+                            <i class="fas fa-map"></i> View on Map
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wedding Ceremonies -->
+            <div class="event-card">
+                <div class="event-icon">
+                    <i class="fas fa-ring"></i>
+                </div>
+                <div class="event-details">
+                    <h3 class="event-title">Wedding Ceremonies</h3>
+                    <div class="ceremony-timeline">
+                        <div class="ceremony-item">
+                            <span class="ceremony-time">8:00 AM</span>
+                            <span class="ceremony-name">Mandap Muhurat</span>
+                        </div>
+                        <div class="ceremony-item">
+                            <span class="ceremony-time">3:30 PM</span>
+                            <span class="ceremony-name">Jaan Prasthan</span>
+                        </div>
+                        <div class="ceremony-item">
+                            <span class="ceremony-time">4:00 PM</span>
+                            <span class="ceremony-name">Varghodo</span>
+                        </div>
+                        <div class="ceremony-item">
+                            <span class="ceremony-time">4:30 PM</span>
+                            <span class="ceremony-name">Hasta Melap</span>
+                        </div>
+                        <div class="ceremony-item">
+                            <span class="ceremony-time">7:00 PM</span>
+                            <span class="ceremony-name">Dinner</span>
+                        </div>
+                    </div>
+                    <p class="venue-info"><i class="fas fa-map-marker-alt"></i> Novotel Ahmedabad, Iscon Cross Road, S.G. Highway, Ahmedabad, Gujarat – 380015</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2 class="section-title" data-en="Photo Gallery" data-gu="ફોટો ગેલેરી">Photo Gallery</h2>
+            
+            <!-- Gallery Slider -->
+            <div class="gallery-slider">
+                <div class="slider-container" id="gallerySlider">
+                    <!-- Images will be loaded dynamically -->
+                </div>
+                <button class="slider-btn prev-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-btn next-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+                <div class="slider-dots" id="sliderDots"></div>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Images will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Guestbook Section -->
+    <section class="guestbook-section">
+        <div class="container">
+            <h2 class="section-title">Digital Guestbook</h2>
+            <p class="guestbook-subtitle">Leave a blessing and watch it bloom in our garden of love</p>
+            <div class="guestbook-form">
+                <div class="avatar-selector">
+                    <span>Choose your avatar:</span>
+                    <div class="avatar-options">
+                        <button class="avatar-btn" data-avatar="👤">👤</button>
+                        <button class="avatar-btn" data-avatar="🌸">🌸</button>
+                        <button class="avatar-btn" data-avatar="💖">💖</button>
+                        <button class="avatar-btn" data-avatar="🎉">🎉</button>
+                        <button class="avatar-btn" data-avatar="🙏">🙏</button>
+                    </div>
+                </div>
+                <input type="text" id="guestBlessing" placeholder="Write your blessing for the couple..." maxlength="100">
+                <button id="addBlessing" class="blessing-btn">
+                    <i class="fas fa-heart"></i> Send Blessing
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section id="rsvp" class="rsvp-section">
+        <div class="container">
+            <h2 class="section-title" data-en="RSVP" data-gu="RSVP">RSVP</h2>
+            <div class="rsvp-content">
+                <p class="rsvp-text">Please let us know if you'll be joining us on our special day!</p>
+                <form class="rsvp-form" id="rsvpForm">
+                    <div class="form-group">
+                        <input type="text" id="guestName" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="guestEmail" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="attendance" required>
+                            <option value="">Will you attend?</option>
+                            <option value="yes">Yes, I'll be there!</option>
+                            <option value="no">Sorry, can't make it</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" id="guestCount" placeholder="Number of guests" min="1" max="10">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" placeholder="Special message for the couple (optional)"></textarea>
+                    </div>
+                    <div class="calendar-buttons">
+                        <button type="button" class="calendar-btn" onclick="addToGoogleCalendar()">
+                            <i class="fab fa-google"></i> Add to Google Calendar
+                        </button>
+                        <button type="button" class="calendar-btn" onclick="downloadICS()">
+                            <i class="fas fa-calendar-plus"></i> Download .ics
+                        </button>
+                    </div>
+                    <button type="submit" class="rsvp-btn">
+                        <span>Send RSVP</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fireworks Finale Section -->
+    <section class="finale-section">
+        <div class="fireworks-container" id="fireworksContainer"></div>
+        <div class="container">
+            <div class="finale-content">
+                <div class="finale-decoration">
+                    <i class="fas fa-sparkles"></i>
+                </div>
+                <h3>See You at the Wedding!</h3>
+                <p class="finale-text">Thank you for being part of our love story. We can't wait to celebrate with you!</p>
+                <div class="social-share">
+                    <p>Share our joy:</p>
+                    <div class="share-buttons">
+                        <button class="share-btn" onclick="shareOnWhatsApp()">
+                            <i class="fab fa-whatsapp"></i>
+                        </button>
+                        <button class="share-btn" onclick="shareOnFacebook()">
+                            <i class="fab fa-facebook"></i>
+                        </button>
+                        <button class="share-btn" onclick="copyLink()">
+                            <i class="fas fa-link"></i>
+                        </button>
+                        <button class="share-btn" onclick="generateQR()">
+                            <i class="fas fa-qrcode"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Starry Night Finale -->
+    <section class="starry-finale" id="starryFinale">
+        <div class="stars-container">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+        </div>
+        <div class="container">
+            <div class="starry-content">
+                <div class="glowing-names">
+                    <span class="glow-name">Chimay</span>
+                    <span class="glow-heart">💖</span>
+                    <span class="glow-name">Priyanka</span>
+                </div>
+                <p class="starry-text">Forever under the same stars</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-decoration">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <p>&copy; 2025 Chimay & Priyanka Wedding</p>
+                <p class="footer-subtitle">Made with ❤️ for our special day</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Audio Elements -->
+    <audio id="backgroundMusic" loop>
+        <source src="audio/wedding-music.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="traditionalMusic" loop>
+        <source src="audio/garba-music.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="bellSound">
+        <source src="audio/temple-bell.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="diyaSound">
+        <source src="audio/diya-light.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- QR Code Modal -->
+    <div id="qrModal" class="qr-modal">
+        <div class="qr-content">
+            <span class="qr-close">&times;</span>
+            <h3>Scan to Share</h3>
+            <div id="qrCode"></div>
+            <p>Share this QR code on your printed invitations!</p>
+        </div>
+    </div>
+
+    <!-- Particle Effect Canvas -->
+    <canvas id="particleCanvas"></canvas>
+    
+    <!-- Floating Diyas -->
+    <div class="floating-diyas">
+        <div class="diya">🪔</div>
+        <div class="diya">🪔</div>
+        <div class="diya">🪔</div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
